@@ -1,3 +1,9 @@
+"""
+Hangman by Prithwish Mukherjee 
+Google Dev Account: https://developers.google.com/profile/u/pmdev
+Replit Account: https://replit.com/@PrithwishMukher
+Devto: https://dev.to/dashboard
+"""
 import random
 number = random.randint(0 , 10000)
 print (number)

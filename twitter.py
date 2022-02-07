@@ -1,3 +1,9 @@
+"""
+Hangman by Prithwish Mukherjee 
+Google Dev Account: https://developers.google.com/profile/u/pmdev
+Replit Account: https://replit.com/@PrithwishMukher
+Devto: https://dev.to/dashboard
+"""
 print("Welcome to the tip calculator!")
 bill = float(input("What was the total bill? $"))
 tip = int(input("How much tip would you like to give? 10, 12, or 15? "))

@@ -1,3 +1,10 @@
+"""
+Hangman by Prithwish Mukherjee 
+Google Dev Account: https://developers.google.com/profile/u/pmdev
+Replit Account: https://replit.com/@PrithwishMukher
+Devto: https://dev.to/dashboard
+"""
+
 from pyfiglet import Figlet
 from termcolor import colored,cprint
 
@@ -45,7 +52,7 @@ class main_bank:
         money[user_name_index] += ammount_to_take_loan #adding the amount to the user to take loan from 
         loan_taken[user] = ammount_to_take_loan  + no_of_rounds * 100 #adding the loan taken to the dictionary
         cprint("Money added successfully","green") #printing the amount added
-        cprint(f"Current balance of {user}: "+ money[user_name_index],"blue") #printing the balance of the user to take loan from
+        cprint(f"Current balance of {user}: "+ str(money[user_name_index]),"blue") #printing the balance of the user to take loan from
         cprint(f"{user} will have to pay ${loan_taken[user]} to end the loan","red") #printing the loan taken from the dictionary
         
     def add_money():
@@ -54,7 +61,7 @@ class main_bank:
         user_name_index = all_users.index(user) #index of the user to add money to
         money[user_name_index] += ammount_to_add #adding the amount to the user to add money to
         cprint("Money added successfully","red") #printing the amount added
-        cprint(f"Current balance of {user} is "+ money[user_name_index],"cyan") #printing the balance of the user to add money to
+        cprint(f"Current balance of {user} is "+ str(money[user_name_index]),"cyan") #printing the balance of the user to add money to
     
     def pay_loan():
         user = input(colored("Enter the name of the user who will pay the loan : ","cyan")).lower() 
@@ -63,7 +70,7 @@ class main_bank:
         loan_taken[user] = loan_taken.get(user) - ammount_to_pay_loan
         money[user_name_index] -= ammount_to_pay_loan #deducting the loan taken from the dictionary
         cprint(f"{user} will have to pay ${loan_taken[user]}","cyan") #printing the loan taken from the dictionary
-        cprint(f"Current balance of {user}: ", money[user_name_index],"blue") #printing the balance of the user to pay loan
+        cprint(f"Current balance of {user}: " + str(money[user_name_index]),"blue") #printing the balance of the user to pay loan
         
     def show_money():
         for i in range(len(all_users)):
@@ -73,7 +80,7 @@ class main_bank:
         cprint("The following users has these loans: ","blue")
         for i in range(len(all_users)):
             if all_users[i] in loan_taken.keys():
-                print(f"{all_users[i]} has taken a loan of ${loan_taken[all_users[i]]}","cyan")   
+                cprint(f"{all_users[i]} has taken a loan of ${loan_taken[all_users[i]]}","cyan")   
 
 if __name__ == "__main__":
     f = Figlet(font='standard')

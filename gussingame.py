@@ -15,7 +15,7 @@ def users():
         print("Too low guess")
     elif user == number:
         print("Correct guess")
-        
+
 
 while True:
     users()

@@ -26,7 +26,7 @@ bestofwhatyouwannaplay = int(input("No of times you wanna play").strip())
       #      print(f"User wins a point as it chose {user_choice} and computer chose {comp_choice}")
        ##    print(f"Comp points"+str(comp_wins))
          #   print(f"Player points"+str(player_wins))
-        
+
 for i in range(0, bestofwhatyouwannaplay):
     user_choice = input("Enter 'R' for rock 'P' for paper and 'S' for scissor\n").lower().strip()
     comp_choice = random.choice(['r', 'p', 's'])

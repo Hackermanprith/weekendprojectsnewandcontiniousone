@@ -33,15 +33,15 @@ def hangman_basics(word):
 
 def hangman_main_play(word,word_letters):
     used_letters = set() 
-    
+
     #lives
     lives = 0
     for i in range(0,len(word)):
         lives +=1
-                         
+
     while lives > 0 and len(word) > 0:
         userguess = input("Enter your guess ").lower().strip()
-    
+
 
 
 def welcome():

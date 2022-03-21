@@ -8,7 +8,7 @@ def anotherway(unser_input):
         res = unser_input ** (1/3)
         res = round(res,0)
         return res
-    
+
 print(anotherway(27000))
 
 def cuberoot(user_input):

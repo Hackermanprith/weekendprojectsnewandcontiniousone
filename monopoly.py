@@ -35,7 +35,7 @@ class main_bank:
         cprint(f"Successfully transferred ${amount}",'green') #printing the amount transferred
         cprint(f"{user_to_add_from} has ${money[to_user_name_index]} after the transaction",'red') #printing the balance of the user to add to
         cprint(f"{user_to_deduct_from} has ${money[from_user_name_index]} after the transaction",'magenta') #printing the balance of the user to deduct from
-        
+
     def remove_money():
         user = input(colored("Enter the name of the user to deduct from: ","blue")).lower() #user to deduct from
         ammount_to_remove_from_user = int(input(colored("Enter the amount to remove from the user: ","magenta"))) #amount to remove from the user
@@ -43,7 +43,7 @@ class main_bank:
         money[user_name_index] -= ammount_to_remove_from_user #deducting the amount from the user to deduct from
         cprint("Money removed successfully","cyan") #printing the amount removed
         cprint(f"{user} has ${money[user_name_index]} left","blue") #printing the balance of the user to deduct from
-        
+
     def take_loan():  
         user = input(colored("Enter the name of the user who will take the loan : ","red")).lower()  #user to take loan from
         ammount_to_take_loan = int(input(colored("Enter the amount to take loan: ","blue")))  #amount to take loan
@@ -54,7 +54,7 @@ class main_bank:
         cprint("Money added successfully","green") #printing the amount added
         cprint(f"Current balance of {user}: "+ str(money[user_name_index]),"blue") #printing the balance of the user to take loan from
         cprint(f"{user} will have to pay ${loan_taken[user]} to end the loan","red") #printing the loan taken from the dictionary
-        
+
     def add_money():
         user = input(colored("Enter the name of the user who will add money: ","blue")).lower() #user to add money to
         ammount_to_add = int(input(colored("Enter the amount to be add: ","red"))) #amount to add
@@ -62,7 +62,7 @@ class main_bank:
         money[user_name_index] += ammount_to_add #adding the amount to the user to add money to
         cprint("Money added successfully","red") #printing the amount added
         cprint(f"Current balance of {user} is "+ str(money[user_name_index]),"cyan") #printing the balance of the user to add money to
-    
+
     def pay_loan():
         user = input(colored("Enter the name of the user who will pay the loan : ","cyan")).lower() 
         ammount_to_pay_loan = int(input(colored("Enter the amount of the loan you wanna pay: ","red")))
@@ -71,11 +71,11 @@ class main_bank:
         money[user_name_index] -= ammount_to_pay_loan #deducting the loan taken from the dictionary
         cprint(f"{user} will have to pay ${loan_taken[user]}","cyan") #printing the loan taken from the dictionary
         cprint(f"Current balance of {user}: " + str(money[user_name_index]),"blue") #printing the balance of the user to pay loan
-        
+
     def show_money():
         for i in range(len(all_users)):
             cprint(f"{all_users[i]} has ${money[i]}","green")
-                                                
+
     def show_all_loans():
         cprint("The following users has these loans: ","blue")
         for i in range(len(all_users)):

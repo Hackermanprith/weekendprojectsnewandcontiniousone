@@ -19,12 +19,12 @@ class Starting_money:
     def add_money(noofpeopleingame):
         for i in range(noofpeopleingame):  # noofpeopleingame is the number of players in the game
             money.append(1500)         # adding money to the index of players in another array 
-    def generate_loan_dict():
+    def generate_loan_dict(self):
         for i in range(len(all_users)): # len(all_users) is the number of players in the game
             loan_taken[all_users[i]] = 0 # adding the loan taken to the dictionary
 
 class main_bank:
-    def transfer_money():
+    def transfer_money(self):
         user_to_deduct_from = input(colored("Enter the name of the user to deduct from: ","blue")).lower() #user to deduct from
         user_to_add_from = input(colored("Enter the name of the user to add to: ","green")).lower() #user to add to
         amount = int(input(colored("Enter the amount to transfer: ","red"))) #amount to transfer
@@ -36,7 +36,7 @@ class main_bank:
         cprint(f"{user_to_add_from} has ${money[to_user_name_index]} after the transaction",'red') #printing the balance of the user to add to
         cprint(f"{user_to_deduct_from} has ${money[from_user_name_index]} after the transaction",'magenta') #printing the balance of the user to deduct from
         
-    def remove_money():
+    def remove_money(self):
         user = input(colored("Enter the name of the user to deduct from: ","blue")).lower() #user to deduct from
         ammount_to_remove_from_user = int(input(colored("Enter the amount to remove from the user: ","magenta"))) #amount to remove from the user
         user_name_index = all_users.index(user) #index of the user to deduct from
@@ -44,7 +44,7 @@ class main_bank:
         cprint("Money removed successfully","cyan") #printing the amount removed
         cprint(f"{user} has ${money[user_name_index]} left","blue") #printing the balance of the user to deduct from
         
-    def take_loan():  
+    def take_loan(self):  
         user = input(colored("Enter the name of the user who will take the loan : ","red")).lower()  #user to take loan from
         ammount_to_take_loan = int(input(colored("Enter the amount to take loan: ","blue")))  #amount to take loan
         no_of_rounds = int(input(colored("Enter the number of rounds in which you will repay loan: ","red"))) #number of rounds in which you will repay loan
@@ -55,7 +55,7 @@ class main_bank:
         cprint(f"Current balance of {user}: "+ str(money[user_name_index]),"blue") #printing the balance of the user to take loan from
         cprint(f"{user} will have to pay ${loan_taken[user]} to end the loan","red") #printing the loan taken from the dictionary
         
-    def add_money():
+    def add_money(self):
         user = input(colored("Enter the name of the user who will add money: ","blue")).lower() #user to add money to
         ammount_to_add = int(input(colored("Enter the amount to be add: ","red"))) #amount to add
         user_name_index = all_users.index(user) #index of the user to add money to
@@ -63,7 +63,7 @@ class main_bank:
         cprint("Money added successfully","red") #printing the amount added
         cprint(f"Current balance of {user} is "+ str(money[user_name_index]),"cyan") #printing the balance of the user to add money to
     
-    def pay_loan():
+    def pay_loan(self):
         user = input(colored("Enter the name of the user who will pay the loan : ","cyan")).lower() 
         ammount_to_pay_loan = int(input(colored("Enter the amount of the loan you wanna pay: ","red")))
         user_name_index = all_users.index(user)#amount to pay loan
@@ -72,11 +72,11 @@ class main_bank:
         cprint(f"{user} will have to pay ${loan_taken[user]}","cyan") #printing the loan taken from the dictionary
         cprint(f"Current balance of {user}: " + str(money[user_name_index]),"blue") #printing the balance of the user to pay loan
         
-    def show_money():
+    def show_money(self):
         for i in range(len(all_users)):
             cprint(f"{all_users[i]} has ${money[i]}","green")
                                                 
-    def show_all_loans():
+    def show_all_loans(self):
         cprint("The following users has these loans: ","blue")
         for i in range(len(all_users)):
             if all_users[i] in loan_taken.keys():
